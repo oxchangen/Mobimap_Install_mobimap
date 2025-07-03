@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 style="color:red">Test SDK</h2>
+    <script>
+      window.tovaAsyncInit = function () {
+        console.log("✅ SDK loaded");
+        tova.init({
+          tenant_id: "01JNJVV5TX8QX5R521SDAA8SAW",
+          bot_code: "01JWZPK62975PSACJ3GTDPADCS",
+          ui_config: { position: "right", hide_greeting: false },
+          extra: { user_id: "test_user", name: "Tester" }
+        });
+        setTimeout(() => { tova.show(); }, 500);
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        js = d.createElement(s); js.id = id;
+        js.src = "https://agents.fpt.ai/connect/sdk.js";
+        js.onload = window.tovaAsyncInit;
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, "script", "tova-jssdk"));
+    </script>
+  </body>
+</html>
